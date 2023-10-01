@@ -1,7 +1,9 @@
 //Mostra uma caixa de diálogo de aviso com o conteúdo opcionalmente especificado e um botão OK.
 alert('Boas vindas ao jogo do número secreto!');
 //Declarando uma variável e o valor do número secreto que essa variável recebe.
-let numeroSecreto = 4;
+let numeroMaximo = prompt('Deseja sortear um número até quanto?');
+console.log(numeroMaximo);
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
 console.log(numeroSecreto);
 //Exibe uma caixa de diálogo com uma mensagem opcional solicitando ao usuário a entrada de algum texto e armazena na variável "chute".
 let chute;
@@ -9,7 +11,7 @@ let tentativas = 1;
 
 //Enquanto chute não for igual ao número secreto
 while (chute != numeroSecreto) {
-    chute = prompt('Escolha um número entre 1 e 10');
+    chute = prompt(`Escolha um número entre 1 e ${numeroMaximo}`);
 
     //Se o chute for igual ao número secreto
     if (chute == numeroSecreto) {
